@@ -1,104 +1,157 @@
 * { box-sizing: border-box; }
 
+:root {
+  --bg: #f9f9f7;
+  --ink: #1a1a1a;
+  --ink-soft: #4f4f4c;
+  --ink-muted: #8c8c87;
+  --accent: #2c4a4a;
+  --line: #e2e1dc;
+  --card: #ffffff;
+}
+
 body {
   margin: 0;
-  padding: 40px 20px 80px;
-  background: #fafaf8;
-  color: #1a1a1a;
-  font-family: ui-monospace, "SF Mono", "Courier New", monospace;
-  font-size: 15px;
-  line-height: 1.6;
+  padding: 0 20px 100px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
 header, main, footer {
-  max-width: 640px;
+  max-width: 660px;
   margin: 0 auto;
 }
 
 header {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 16px;
-  margin-bottom: 32px;
+  padding: 56px 0 28px;
 }
 
 .sitelink {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1a1a1a;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
   text-decoration: none;
 }
-.sitelink:hover { text-decoration: underline; }
 
 .tagline {
-  color: #888;
-  margin: 4px 0 0;
-  font-size: 13px;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--ink-muted);
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+main {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
 }
 
 .entries {
   display: flex;
   flex-direction: column;
-  gap: 28px;
 }
+
+.entry {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.entry:last-child { border-bottom: none; }
 
 .entry-title {
-  font-size: 17px;
-  font-weight: bold;
-  color: #1a1a1a;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
   text-decoration: none;
+  letter-spacing: -0.005em;
 }
-.entry-title:hover { text-decoration: underline; }
+.entry-title:hover { color: var(--accent); }
 
 .meta {
-  color: #888;
-  font-size: 12px;
-  margin: 4px 0 8px;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--ink-muted);
+  font-size: 13px;
+  margin: 6px 0 10px;
+  letter-spacing: 0.01em;
 }
 
 .excerpt {
-  color: #333;
+  color: var(--ink-soft);
   margin: 0;
+  font-size: 16px;
 }
 
 article h1 {
-  font-size: 22px;
-  margin-bottom: 4px;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 20px 0 4px;
+  line-height: 1.25;
 }
 
 article p, article li {
-  color: #1a1a1a;
+  color: var(--ink);
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 8px 0;
 }
 
 article pre {
-  background: #f0efe9;
-  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 14px;
   overflow-x: auto;
-  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 article code {
-  background: #f0efe9;
-  padding: 1px 4px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
 }
 
 article blockquote {
-  border-left: 3px solid #ccc;
-  margin: 0;
-  padding-left: 14px;
-  color: #555;
+  border-left: 3px solid var(--accent);
+  margin: 20px 0;
+  padding: 2px 0 2px 18px;
+  color: var(--ink-soft);
+  font-style: italic;
 }
 
 .back {
-  margin-top: 32px;
+  margin-top: 40px;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
-.back a { color: #555; }
+.back a { color: var(--ink-muted); }
+.back a:hover { color: var(--accent); }
 
 footer {
-  margin-top: 60px;
-  color: #aaa;
-  font-size: 11px;
-  border-top: 1px solid #eee;
-  padding-top: 16px;
+  margin-top: 70px;
+  color: var(--ink-muted);
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
 }
 
-a { color: #1a4d8f; }
+a { color: var(--accent); }
+
+@media (max-width: 500px) {
+  body { font-size: 16px; }
+  header { padding-top: 36px; }
+  .sitelink { font-size: 22px; }
+  article h1 { font-size: 25px; }
+}
