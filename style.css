@@ -1,18 +1,22 @@
 * { box-sizing: border-box; }
 
 :root {
-  --bg: #f9f9f7;
-  --ink: #1a1a1a;
-  --ink-soft: #4f4f4c;
-  --ink-muted: #8c8c87;
-  --accent: #2c4a4a;
-  --line: #e2e1dc;
+  --bg: #f7f6f2;
+  --ink: #1a1811;
+  --ink-soft: #4d4a41;
+  --ink-muted: #8a867b;
+  --accent: #a8442b;
+  --accent-dark: #7c3220;
+  --line: #e3e0d6;
   --card: #ffffff;
+  --hero-bg: #171510;
+  --hero-ink: #f4f0e6;
+  --hero-muted: #a89f8c;
 }
 
 body {
   margin: 0;
-  padding: 0 20px 100px;
+  padding: 0 0 100px;
   background: var(--bg);
   color: var(--ink);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
@@ -21,50 +25,66 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-header, main, footer {
-  max-width: 660px;
-  margin: 0 auto;
+.hero {
+  background: var(--hero-bg);
+  width: 100%;
 }
 
-header {
-  padding: 56px 0 28px;
+.hero-inner {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 72px 24px 48px;
+  border-bottom: 3px solid var(--accent);
 }
 
 .sitelink {
-  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 26px;
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--hero-ink);
   text-decoration: none;
+  display: inline-block;
 }
 
 .tagline {
   font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: var(--ink-muted);
-  margin: 6px 0 0;
+  color: var(--hero-muted);
+  margin: 10px 0 0;
   font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-main {
-  border-top: 1px solid var(--line);
-  padding-top: 8px;
+main, footer {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .entries {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+  margin-top: 40px;
 }
 
 .entry {
-  padding: 28px 0;
-  border-bottom: 1px solid var(--line);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 26px 28px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.entry:last-child { border-bottom: none; }
+.entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 24, 17, 0.08);
+}
 
 .entry-title {
   font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--ink);
   text-decoration: none;
@@ -76,8 +96,9 @@ main {
   font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--ink-muted);
   font-size: 13px;
-  margin: 6px 0 10px;
-  letter-spacing: 0.01em;
+  margin: 8px 0 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .excerpt {
@@ -86,17 +107,37 @@ main {
   font-size: 16px;
 }
 
-article h1 {
-  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin: 20px 0 4px;
-  line-height: 1.25;
+article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 36px 40px 8px;
+  margin-top: 40px;
 }
 
-article p, article li {
+article h1 {
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px;
+  line-height: 1.25;
   color: var(--ink);
+}
+
+article > .meta { margin-bottom: 24px; }
+
+article p, article li { color: var(--ink); }
+
+article > p:first-of-type::first-letter {
+  font-family: Georgia, serif;
+  float: left;
+  font-size: 58px;
+  line-height: 0.85;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 6px 8px 0 0;
 }
 
 article img {
@@ -106,7 +147,7 @@ article img {
 }
 
 article pre {
-  background: var(--card);
+  background: var(--bg);
   border: 1px solid var(--line);
   padding: 14px;
   overflow-x: auto;
@@ -115,7 +156,7 @@ article pre {
 }
 
 article code {
-  background: var(--card);
+  background: var(--bg);
   border: 1px solid var(--line);
   padding: 1px 5px;
   border-radius: 3px;
@@ -131,7 +172,8 @@ article blockquote {
 }
 
 .back {
-  margin-top: 40px;
+  display: inline-block;
+  margin: 32px 0 40px;
   font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
@@ -139,19 +181,21 @@ article blockquote {
 .back a:hover { color: var(--accent); }
 
 footer {
-  margin-top: 70px;
+  margin-top: 60px;
   color: var(--ink-muted);
   font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 12px;
   border-top: 1px solid var(--line);
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 a { color: var(--accent); }
 
 @media (max-width: 500px) {
   body { font-size: 16px; }
-  header { padding-top: 36px; }
-  .sitelink { font-size: 22px; }
+  .hero-inner { padding: 48px 20px 32px; }
+  .sitelink { font-size: 30px; }
+  article { padding: 26px 22px 8px; }
   article h1 { font-size: 25px; }
 }
