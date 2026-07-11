@@ -72,6 +72,10 @@ def build():
     (OUT_DIR / "posts").mkdir()
     shutil.copy(ROOT / "style.css", OUT_DIR / "style.css")
 
+    images_dir = ROOT / "images"
+    if images_dir.exists():
+        shutil.copytree(images_dir, OUT_DIR / "images")
+
     posts = [parse_post(p) for p in POSTS_DIR.glob("*.md")]
     posts.sort(key=lambda p: p["date"], reverse=True)
 
