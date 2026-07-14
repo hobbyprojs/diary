@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re
 import shutil
+import subprocess
 from pathlib import Path
 from datetime import datetime
 import markdown
@@ -36,6 +37,21 @@ PAGE = """<!DOCTYPE html>
 </html>
 """
 
+def get_git_added_date(path):
+    """Return the ISO timestamp of the earliest commit that touched this file.
+    Falls back to None if git isn't available or the file isn't tracked yet."""
+    try:
+        result = subprocess.run(
+            ["git", "log", "--follow", "--format=%aI", "--", str(path)],
+            cwd=ROOT, capture_output=True, text=True, check=True
+        )
+        lines = [l for l in result.stdout.strip().splitlines() if l]
+        if lines:
+            return lines[-1]  # oldest commit = when the post was first added
+    except Exception:
+        pass
+    return None
+
 def parse_post(path):
     text = path.read_text(encoding="utf-8")
     meta = {}
@@ -62,6 +78,11 @@ def parse_post(path):
     meta["slug"] = slug
     meta["html"] = markdown.markdown(body, extensions=["fenced_code", "tables"])
     meta["excerpt"] = strip_tags(meta["html"])[:220].rsplit(" ", 1)[0] + "..."
+
+    # Sort key: real commit time when available, so same-day posts still
+    # order correctly. Falls back to the displayed date if git isn't available.
+    git_date = get_git_added_date(path)
+    meta["sort_key"] = git_date if git_date else meta["date"]
     return meta
 
 def strip_tags(html):
@@ -79,7 +100,7 @@ def build():
         shutil.copytree(images_dir, OUT_DIR / "images")
 
     posts = [parse_post(p) for p in POSTS_DIR.glob("*.md")]
-    posts.sort(key=lambda p: p["date"], reverse=True)
+    posts.sort(key=lambda p: p["sort_key"], reverse=True)
 
     for post in posts:
         content = f"""<article>
