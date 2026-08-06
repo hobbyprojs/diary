@@ -23,3 +23,8 @@ the only thing i want is the ability to take myself out of this joke of an exist
 i will throw it away. i will. so what? i need to stay alive because im "smart"? you're underestimating my stupidity. 
 i refuse to be chained to this world because i could potentially add to it. when i was younger i had all the will but no ability to do that, now i have all the ability and absolutely no will.
 the human race may further itself, it may not, or it may in the best case implode on itself and rid the world of a mistake.
+
+
+whatever. anyway i wanted to clarify that this website is intentionally this rough, ragged and unorganized. professional isn't exactly what im going for here, nor am i trying to convey things clearly. this is merely a rudimentary collection of my thoughts
+
+hate this. all of this. thinking about tomorrow makes me frown and thinking about "the future" and me being in it makes me want to do it now forget about some 2 months later 6 months later. conversely, thinking about the near future and then thinking "i won't be here by then" feels like somebody just lifted some weight off my back.
