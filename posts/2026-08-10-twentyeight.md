@@ -9,3 +9,4 @@ there are periods of strong impulse like right now during which i feel like genu
 once i have my preparation down completely i need to get out at a time like this and then do it. i wouldn't even think twice or hesitate
 i will feel a bit better after a while maybe tomorrow in the morning but i just dread all of this i hate everything 
 my brain is pushing against my skull trying to get out fucking hurts 
+image is how i feel trying to survive atleast the next few, but i feel like that ability is slowly fading away from me each passing day
