@@ -24,3 +24,4 @@ they're all smiling they're all sat in the garden there's old people young peopl
 the sky is so blue there are no buildings its just a whole green landscape its so peaceful oh my god
 i saw long roads after pretty roads silent roads nobodys using them there's trees all around i see red leaves 
 oh my god.
+this feels like terminal lucidity of sorts i feel certain parts of my brain being activated places i never saw before its somehow digging up very old memories i thought i forgot its taking me a bit to really comprehend them are these revelations is god calling me back is this some sort of prophecy whats going on 
