@@ -15,3 +15,4 @@ seeing that this is a matter of my future, of the remaining 3 years of my life, 
 confident in my decision to take myself out because this is literally the only thing that matters.
 there's no fucking point of a CSE degree without being in the coding batch. it's not like i cant code. people would laugh if you even said that.
 but yeah sure. i dont deserve it. right. fuck this.
+i can't even go back now if i change my mind. they didn't even contact me. didn't tell me yeah no we're not waiving your fee yeah we are nothing like that. what am i even fucking supposed to do
